@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#111114">
+<title>SyncSpace — Ruang kecil, rencana besar.</title>
+<meta name="description" content="Ruang kolaborasi Dion dan pasangan untuk keuangan, agenda, dan pekerjaan.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+:root{color-scheme:dark;--bg:#111114;--surface:#19191e;--surface2:#202026;--line:#2a2a32;--text:#f1f0f5;--muted:#95939f;--violet:#a892ff;--green:#75d5b4;--rose:#f6a3ae}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--violet)}button{cursor:pointer;transition:background .18s,transform .18s;border:0;color:inherit}button:disabled{opacity:.4;cursor:default}a{color:inherit;text-decoration:none}h1,h2,h3,h4,p{margin:0}h1,h2,h3,.amount,.brand{font-family:'Manrope',sans-serif}button:hover:not(:disabled){filter:brightness(1.13)}.ph,.ph-fill{font-size:20px;flex-shrink:0}.muted{color:var(--muted)}.small{font-size:11px}.flex-row{display:flex;align-items:center;gap:10px}.spread{display:flex;align-items:center;justify-content:space-between;gap:14px}.sidebar{width:220px;position:fixed;inset:0 auto 0 0;background:#151518;border-right:1px solid var(--line);padding:30px 18px 20px;display:flex;flex-direction:column;z-index:20}.brand{font-size:23px;letter-spacing:-1px;font-weight:800;display:flex;align-items:center;gap:9px;padding:0 12px}.brand-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#aa91ff;color:#191222;border-radius:10px;transform:rotate(-8deg)}.brand-icon i{font-size:23px;transform:rotate(8deg)}.workspace{margin:34px 0 29px;padding:12px;background:#1e1e24;border:1px solid #2c2c33;border-radius:9px}.workspace-icon{background:#322944;color:#c7b8ff;padding:8px;border-radius:7px;display:flex}.workspace{gap:8px;padding:10px}.workspace-icon{padding:6px}.workspace strong{font-size:11px;font-weight:600;white-space:nowrap}.workspace p{font-size:10px;color:var(--muted);margin-top:3px}.nav-label{font-size:10px;letter-spacing:1.6px;color:#8c8995;padding:0 13px;margin-bottom:13px}.nav-item{width:100%;display:flex;align-items:center;gap:12px;background:transparent;color:#aaa7b4;padding:12px 14px;border-radius:7px;margin-bottom:5px;text-align:left;font-size:13px}.nav-item.active{background:#2c253e;color:#c4afff}.nav-item.active:before{content:'';position:absolute;left:0;width:3px;height:22px;background:#b99aff;border-radius:0 3px 3px 0}.nav-count{margin-left:auto;background:#373042;color:#d5c3ff;border-radius:5px;font-size:10px;padding:2px 6px}.side-bottom{margin-top:auto}.together-card{position:relative;overflow:hidden;background:linear-gradient(130deg,#292233,#1d1c24);border:1px solid #3b304b;border-radius:10px;padding:17px 14px;margin-bottom:20px}.together-card i{color:#b7a0ee;font-size:24px}.together-card h3{font-size:12px;margin:12px 0 7px}.together-card p{font-size:11px;line-height:1.8;color:#aaa2b7}.profile{border-top:1px solid var(--line);padding:18px 8px 0}.avatar{width:30px;height:30px;border:2px solid #24222d;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;background:#b9b1da;color:#30213e;flex-shrink:0}.avatar.pink{background:#d9b7c2;color:#4d2c37}.avatar-stack{display:flex;align-items:center}.avatar-stack .avatar+.avatar{margin-left:-8px}.main{margin-left:220px}.topbar{height:76px;padding:0 36px;border-bottom:1px solid #25252b;display:flex;justify-content:space-between;align-items:center}.breadcrumb{font-size:12px;color:#928e9d;display:flex;align-items:center;gap:12px}.breadcrumb .current{color:#ddd9e6}.top-tools{display:flex;gap:18px;align-items:center}.date-top{font-size:11px;color:#aaa7b2}.top-tools .divider{height:20px;width:1px;background:var(--line)}.demo-pill{font-size:9px;letter-spacing:1px;border:1px solid #3e354f;color:#c6aff1;background:#282232;border-radius:4px;padding:4px 6px}.page-wrap{max-width:1450px;margin:auto;padding:31px 36px 22px}.page-head{margin-bottom:29px;display:flex;align-items:center;justify-content:space-between;gap:18px}.eyebrow{color:#bda5f5;font-size:10px;letter-spacing:2px;font-weight:600;margin-bottom:10px}.page-head h1{font-size:27px;font-weight:750;letter-spacing:-1px}.page-head .subtitle{font-size:12px;color:#9d99a7;margin-top:9px}.head-actions{display:flex;gap:10px;align-items:center}.btn{padding:10px 14px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:550;font-size:11px;white-space:nowrap;background:#232329;border:1px solid #35333e}.btn .ph{font-size:16px}.btn-primary{background:#b29af8;border:1px solid #b29af8;color:#21162f;box-shadow:0 3px 14px #9b6fed0d}.btn-ghost{background:transparent;border:none;color:#b4a0dd;padding:4px 0;font-size:11px}.btn-ghost i{font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-bottom:23px}.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;position:relative}.stat:first-child{background:linear-gradient(110deg,#24202f,#1b1923);border-color:#40344f}.stat-label{display:flex;align-items:center;gap:9px;color:#c4bfce;font-size:11px}.stat-label i{font-size:17px;color:#b9a2f5}.stat .amount{font-size:28px;font-weight:700;letter-spacing:-1px;margin:18px 0 13px;font-variant-numeric:tabular-nums}.stat .amount .suffix{font-size:16px;color:#88828f;font-weight:500;letter-spacing:0}.stat-foot{display:flex;align-items:center;gap:7px;font-size:10px;color:#9993a3}.chip{font-size:10px;padding:3px 6px;border-radius:4px;display:inline-flex;align-items:center;gap:3px;background:#23332e;color:var(--green)}.chip i{font-size:11px}.chip.purple{color:#c8afff;background:#33283f}.chip.pink{background:#35292e;color:#eab0bc}.dashboard-grid{display:grid;grid-template-columns:1.43fr 1fr;gap:22px}.panel{border:1px solid var(--line);background:var(--surface);border-radius:10px;overflow:hidden;min-width:0}.panel-header{padding:21px 22px 18px}.panel h2{font-size:14px;font-weight:650;letter-spacing:-.25px}.panel-subtitle{font-size:10px;color:var(--muted);margin-top:5px}.panel-body{padding:0 22px 21px}.section-icon{color:#a39aad;font-size:18px}.cash-summary{display:flex;gap:16px;margin-bottom:20px}.cash-item{background:#1f1f25;border:1px solid #2a2932;border-radius:7px;padding:13px;flex:1;display:flex;align-items:center;gap:12px}.flow-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#24342e;color:#8ad2b6;flex-shrink:0}.flow-icon.out{background:#35272d;color:#eeb0b8}.flow-icon i{font-size:17px}.cash-item p{font-size:10px;color:#b0aab9;margin-bottom:5px}.cash-item strong{font-size:15px;font-weight:600;letter-spacing:-.3px}.mini-label{font-size:10px;font-weight:500;color:#9e97a9;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}.transaction{padding:12px 0;display:flex;align-items:center;gap:11px;border-bottom:1px solid #29282f}.transaction:last-child{border:0;padding-bottom:0}.transaction .tx-icon{height:33px;width:33px;background:#26252c;border:1px solid #302f38;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#c3becd;flex-shrink:0}.transaction .tx-icon i{font-size:17px}.tx-name{font-size:11px;font-weight:500}.tx-detail{font-size:9px;color:#96909f;margin-top:5px}.tx-amount{margin-left:auto;text-align:right;font-size:11px;font-weight:500;white-space:nowrap}.positive{color:var(--green)}.negative{color:var(--rose)}.savings{background:radial-gradient(ellipse at 100% 0,#302338 0,transparent 65%),var(--surface)}.savings-hero{display:flex;align-items:center;gap:13px;margin:3px 0 22px}.goal-icon{width:49px;height:49px;border:1px solid #51405b;background:#33283e;display:flex;align-items:center;justify-content:center;color:#cdb2f5;border-radius:12px}.goal-icon i{font-size:25px}.savings-hero h3{font-size:13px;font-weight:600;margin-bottom:6px}.goal-money{font-family:Manrope,sans-serif;font-size:24px;font-weight:700;letter-spacing:-.6px}.goal-money span{font-size:11px;color:#a499ad;font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:0}.progress-track{height:7px;background:#33303b;border-radius:9px;overflow:hidden;margin-top:14px}.progress-fill{height:100%;background:#b196f7;border-radius:9px;transition:width .3s}.savings-meta{display:flex;justify-content:space-between;font-size:10px;color:#aaa1b6;margin-top:9px}.savings-meta strong{color:#cfb9ff;font-weight:500}.saving-footer{border-top:1px solid #36303f;margin-top:21px;padding-top:16px;display:flex;justify-content:space-between;align-items:center}.saving-footer .avatar{width:24px;height:24px;font-size:8px}.saving-footer p{font-size:9px;color:#a69bae;margin-left:7px}.save-btn{font-size:10px;padding:8px 11px;border-color:#57416e;background:#372b47;color:#d0b8fb}.encouragement{font-size:10px;color:#afa3bc;margin-top:17px;display:flex;align-items:center;gap:6px}.encouragement i{font-size:13px;color:#c6adf2}.agenda-row{display:flex;gap:15px;position:relative;padding:12px 0}.agenda-date{width:36px;text-align:center;flex-shrink:0;padding-top:2px}.agenda-date .day{color:#a69ead;font-size:9px;text-transform:uppercase}.agenda-date strong{display:block;font-size:20px;font-weight:600;margin-top:3px}.agenda-event{border-left:2px solid #b69bef;padding:2px 0 2px 13px;flex:1}.agenda-event.rose{border-color:#dca1b8}.agenda-event.cyan{border-color:#83bec7}.agenda-event h3{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;margin-bottom:8px}.agenda-event .spread{align-items:center}.event-time{font-size:10px;color:#aaa3b2;display:flex;gap:5px;align-items:center}.event-time i{font-size:12px}.tag{font-size:9px;padding:3px 7px;border-radius:4px;white-space:nowrap;background:#332b40;color:#c3adeb}.tag.rose{background:#382b34;color:#deb0c3}.tag.cyan{background:#263337;color:#9bc6cc}.tasks-toolbar{display:flex;gap:18px;border-bottom:1px solid #302d37;margin-bottom:3px}.filter-tab{font-size:10px;padding:1px 0 11px;color:#9f97ac;background:none;border-bottom:2px solid transparent}.filter-tab.active{color:#cbb5fa;border-bottom-color:#bba0fa}.task-row{display:flex;align-items:center;gap:10px;border-bottom:1px solid #2a2831;padding:13px 0}.task-row:last-child{border-bottom:0;padding-bottom:0}.task-row input[type=checkbox]{appearance:none;width:15px;height:15px;border:1px solid #57505e;background:#222027;border-radius:4px;cursor:pointer;flex-shrink:0;position:relative}.task-row input:checked{background:#ab91ec;border-color:#ab91ec}.task-row input:checked:after{content:'✓';position:absolute;inset:0;font-size:11px;text-align:center;color:#20172d}.task-row label{font-size:11px;cursor:pointer;flex:1}.task-row label .task-meta{color:#8e8499;font-size:9px;display:block;margin-top:6px}.task-row.done label{color:#8f879a;text-decoration:line-through}.task-row .avatar{height:23px;width:23px;font-size:8px}.priority{height:5px;width:5px;border-radius:50%;background:#e7b179;margin-right:5px;display:inline-block}.footer{display:flex;justify-content:space-between;gap:14px;padding:21px 1px 0;color:#8d8697;font-size:9px}.footer span{display:flex;align-items:center;gap:5px}.footer i{font-size:11px}.footer .status-dot{width:5px;height:5px;border-radius:50%;background:#86bd9c;display:inline-block}.toolbar{display:flex;gap:12px;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap}.search{position:relative;flex:1;max-width:350px}.search i{position:absolute;top:12px;left:12px;font-size:17px;color:#8f879c}.search input{padding-left:37px;width:100%}.field{background:#202026;border:1px solid #38343f;padding:11px 12px;border-radius:7px;color:#eee9f5;min-width:0}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;text-align:left;white-space:nowrap}th{font-size:10px;color:#9f97ab;font-weight:500;padding:13px 22px;border-bottom:1px solid var(--line);background:#1d1c23}td{padding:16px 22px;font-size:12px;border-bottom:1px solid var(--line)}tr:last-child td{border:0}td .ph{font-size:17px}td:last-child,th:last-child{text-align:right}.table-footer{font-size:10px;color:#a299af;padding:17px 22px;border-top:1px solid var(--line)}.empty{padding:32px;text-align:center;color:#b6adc3;font-size:12px}.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-bottom:24px}.day-cell{padding:14px 5px;text-align:center;border:1px solid var(--line);border-radius:9px;background:#1a191f;color:#aaa1b6}.day-cell strong{display:block;font-size:22px;font-family:Manrope,sans-serif;margin:9px 0}.day-cell span{font-size:10px}.day-cell.selected{border-color:#b299f7;background:#30253f;color:#e0d1ff}.day-cell .day-dot{width:4px;height:4px;background:#b79eeb;display:block;margin:0 auto;border-radius:50%}.planning-list .agenda-row{padding:21px 0;border-bottom:1px solid var(--line)}.planning-list .agenda-row:last-child{border:0}.planning-list .agenda-event h3{font-size:14px}.planning-list .agenda-event{padding-left:18px}.legend{display:flex;gap:15px;font-size:10px;margin-bottom:20px;color:#aaa1b6}.legend span{display:flex;align-items:center;gap:6px}.legend b{height:6px;width:6px;background:#b9a1ee;border-radius:50%}.legend b.rose{background:#dca1b8}.legend b.cyan{background:#83bec7}.kanban{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.kanban-col{background:#17161c;border:1px solid #2b2731;border-radius:10px;padding:17px;min-height:380px}.column-title{font-size:12px;margin-bottom:21px;display:flex;gap:8px;align-items:center}.column-title .count{margin-left:auto;color:#9c92a8;font-size:11px;background:#27222e;border-radius:4px;padding:2px 6px}.column-dot{height:7px;width:7px;border-radius:50%;background:#9e95ac}.column-dot.progress{background:#b29bf0}.column-dot.done{background:#75c9a7}.task-card{padding:16px;background:#222027;border:1px solid #36303e;border-radius:8px;margin-bottom:12px}.task-card h3{font-size:12px;line-height:1.7;font-family:'DM Sans',sans-serif;margin:13px 0 17px;font-weight:500}.task-card .field{font-size:10px;width:100%;margin-top:14px;padding:8px}.task-card .avatar{width:24px;height:24px;font-size:8px}.icon-btn{width:30px;height:30px;border-radius:7px;background:transparent;display:inline-flex;justify-content:center;align-items:center;color:#b9afc6}.icon-btn:hover{background:#342d3d}.icon-btn .ph{font-size:18px}dialog{background:#1d1a23;color:var(--text);border:1px solid #473c55;border-radius:13px;padding:27px;width:440px;max-width:calc(100% - 32px);max-height:90dvh;box-shadow:0 20px 100px #0009}dialog::backdrop{background:#06050abf;backdrop-filter:blur(5px)}dialog h2{font-size:20px;letter-spacing:-.5px}dialog .form-description{font-size:12px;color:#a69bae;margin:10px 0 24px;line-height:1.7}.form-field{display:grid;gap:8px;margin-bottom:17px;font-size:12px;color:#c7bcd3}.form-field .field{width:100%}.form-columns{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:24px}.toast{position:fixed;bottom:25px;left:calc(50% + 110px);transform:translateX(-50%);background:#33283f;border:1px solid #645279;color:#e4d4fb;border-radius:9px;padding:13px 20px;z-index:100;box-shadow:0 10px 25px #0004;font-size:12px}.toast[hidden]{display:none}.page{animation:enter .25s ease-out}@keyframes enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.mobile-brand{display:none}.overview-mini-note{color:#9b92a7;font-size:10px;line-height:1.8}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(min-width:1500px){.page-wrap{padding-top:40px}.stat{padding:25px}.dashboard-grid{gap:25px}.panel-header{padding-top:25px}.panel-body{padding-bottom:25px}.transaction{padding:16px 0}.task-row{padding:17px 0}.agenda-row{padding:17px 0}}@media(max-width:1150px){.sidebar{width:188px;padding-left:12px;padding-right:12px}.brand{font-size:21px;padding-left:8px}.main{margin-left:188px}.page-wrap{padding:27px 24px 20px}.topbar{padding:0 24px}.head-actions{gap:7px}.page-head h1{font-size:24px}.stat{padding:17px}.stat .amount{font-size:25px}.panel-header{padding:18px}.panel-body{padding:0 18px 18px}.cash-item{padding:10px;gap:8px}.cash-item strong{font-size:13px}.cash-summary{gap:8px}.flow-icon{width:28px;height:28px}.goal-money{font-size:21px}.dashboard-grid{gap:17px;grid-template-columns:1.2fr 1fr}.toast{left:calc(50% + 94px)}}@media(max-width:940px){.page-head{align-items:flex-start}.head-actions{flex-direction:column;align-items:stretch}.stats{gap:11px}.stat .amount{font-size:21px}.stat-foot{font-size:9px;flex-wrap:wrap}.dashboard-grid{grid-template-columns:1fr 1fr}.cash-summary{flex-direction:column}.cash-item{padding:9px}.cash-item p{margin-bottom:2px}.goal-money span{display:block;margin-top:7px}.saving-footer{flex-wrap:wrap;gap:12px}.date-top{display:none}.agenda-event .spread{align-items:flex-start;gap:7px;flex-direction:column}.kanban{grid-template-columns:1fr}.kanban-col{min-height:auto}.stats .stat-label{font-size:10px}.stat-label i{font-size:15px}}@media(max-width:720px){.sidebar{inset:auto 0 0 0;width:100%;height:70px;padding:7px 13px max(7px,env(safe-area-inset-bottom));border-right:0;border-top:1px solid #36303e;background:#19161ff5;backdrop-filter:blur(15px)}.sidebar .brand,.workspace,.nav-label,.side-bottom{display:none}.sidebar nav{display:flex;justify-content:space-around}.nav-item{width:auto;flex:1;flex-direction:column;padding:5px;gap:4px;font-size:9px;margin:0;border-radius:7px}.nav-item .ph{font-size:21px}.nav-item.active{background:#30243f}.nav-item.active:before,.nav-count{display:none}.main{margin-left:0}.topbar{height:66px;padding:0 20px}.breadcrumb{display:none}.mobile-brand{display:flex;font-size:20px;padding:0;gap:7px}.mobile-brand .brand-icon{width:27px;height:27px;border-radius:8px}.mobile-brand i{font-size:20px}.top-tools{gap:10px}.top-tools .divider{display:none}.page-wrap{padding:25px 20px 90px}.page-head{margin-bottom:23px;display:block}.page-head h1{font-size:26px}.page-head .subtitle{font-size:11px;line-height:1.7}.head-actions{flex-direction:row;margin-top:20px;justify-content:space-between}.head-actions .btn{font-size:10px}.eyebrow{font-size:9px}.stats{grid-template-columns:1fr;gap:10px;margin-bottom:18px}.stat{padding:17px 18px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px}.stat .amount{margin:0;font-size:24px;grid-row:span 2}.stat-label{grid-column:1;grid-row:1}.stat-foot{grid-column:1;grid-row:2;font-size:9px}.stat-label i{font-size:16px}.stats .stat-label{font-size:11px}.stat .amount .suffix{font-size:12px}.dashboard-grid{grid-template-columns:1fr;gap:18px}.panel-header{padding:19px 18px}.panel-body{padding:0 18px 20px}.cash-summary{flex-direction:row;gap:10px}.cash-item{padding:11px 9px}.cash-item strong{font-size:12px}.cash-item p{font-size:9px}.cash-item .flow-icon{width:25px;height:28px}.cash-item .flow-icon i{font-size:14px}.transaction{padding:14px 0}.goal-money span{display:inline;font-size:11px}.goal-money{font-size:24px}.saving-footer{flex-wrap:nowrap}.agenda-event .spread{flex-direction:row;align-items:center}.task-row{padding:15px 0}.footer{flex-direction:column;align-items:center;gap:8px;font-size:8px;padding-top:25px}.toast{left:50%;bottom:83px;width:max-content;max-width:90%;text-align:center}.week-grid{gap:5px}.day-cell{padding:10px 2px}.day-cell strong{font-size:18px}.day-cell span{font-size:9px}.planning-list .agenda-event h3{font-size:12px}.toolbar .search{max-width:none;width:100%;flex:auto}.toolbar select{flex:1}.legend{font-size:9px;gap:12px}.form-columns{gap:10px}td,th{padding-left:16px;padding-right:16px}.demo-pill{font-size:8px}.top-tools .avatar{height:26px;width:26px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#content">Lewati navigasi</a>
+<aside class="sidebar" aria-label="Navigasi utama">
+<a class="brand" href="#overview" aria-label="SyncSpace overview"><span class="brand-icon"><i class="ph ph-intersect" aria-hidden="true"></i></span>SyncSpace<span style="color:#b29af8">.</span></a>
+<div class="workspace flex-row"><span class="workspace-icon"><i class="ph ph-house-line" aria-hidden="true"></i></span><div><strong>Our little space</strong><p>Personal workspace</p></div><i class="ph ph-lock-simple muted" style="font-size:13px;margin-left:auto" aria-hidden="true"></i></div>
+<p class="nav-label">WORKSPACE</p>
+<nav><button class="nav-item active" data-page="overview"><i class="ph ph-squares-four" aria-hidden="true"></i><span>Overview</span></button><button class="nav-item" data-page="finance"><i class="ph ph-wallet" aria-hidden="true"></i><span>Keuangan</span></button><button class="nav-item" data-page="planning"><i class="ph ph-calendar-blank" aria-hidden="true"></i><span>Planning</span></button><button class="nav-item" data-page="work"><i class="ph ph-kanban" aria-hidden="true"></i><span>Kerja</span><span class="nav-count" id="task-count">0</span></button></nav>
+<div class="side-bottom"><div class="together-card"><i class="ph ph-sparkle" aria-hidden="true"></i><h3>Better, together.</h3><p>Rencana kecil hari ini.<br>Mimpi besar kita nanti.</p></div><div class="profile flex-row"><div class="avatar-stack"><span class="avatar">D</span><span class="avatar pink">P</span></div><div><strong style="font-size:11px;font-weight:500">Dion & Pasangan</strong><p class="muted" style="font-size:9px;margin-top:4px">Satu ruang, satu tujuan.</p></div></div></div>
+</aside>
+<div class="main"><header class="topbar"><div class="breadcrumb"><i class="ph ph-house-line" style="font-size:15px" aria-hidden="true"></i><span>Our little space</span><span style="color:#524d5c">/</span><span class="current" id="breadcrumb">Overview</span></div><a href="#overview" class="brand mobile-brand"><span class="brand-icon"><i class="ph ph-intersect" aria-hidden="true"></i></span>SyncSpace.</a><div class="top-tools"><span class="date-top" id="header-date">Hari ini</span><span class="demo-pill" style="background:#1d382d;color:#75d5b4;border-color:#2a5041">LIVE CLOUD</span><span class="divider"></span><div class="avatar-stack" aria-label="Dion dan Pasangan"><span class="avatar">D</span><span class="avatar pink">P</span></div></div></header><main id="content" class="page-wrap" tabindex="-1"></main></div>
+<dialog id="modal" aria-labelledby="modal-title"><div class="spread"><h2 id="modal-title"></h2><button class="icon-btn" id="close-modal" aria-label="Tutup dialog"><i class="ph ph-x" aria-hidden="true"></i></button></div><p class="form-description" id="modal-description"></p><form id="entry-form"></form></dialog><div id="toast" class="toast" role="status" hidden></div>
+
+<!-- Menggunakan Script Module untuk fitur Firebase Cloud -->
+<script type="module">
+// 1. IMPORT FIREBASE DARI CDN
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, onSnapshot, addDoc, updateDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// 2. KONFIGURASI FIREBASE (Dari Akunmu)
+const firebaseConfig = {
+  apiKey: "AIzaSyCbQHNDelS6ZSFpokQnabSMxZM5kptSc7k",
+  authDomain: "stzshx.firebaseapp.com",
+  projectId: "stzshx",
+  storageBucket: "stzshx.firebasestorage.app",
+  messagingSenderId: "1008220927678",
+  appId: "1:1008220927678:web:0fffca785febae056fd0ef",
+  measurementId: "G-FDEWBGRQJ1"
+};
+
+// 3. INISIALISASI DATABASE
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// 4. MENGATUR TANGGAL OTOMATIS (Mengikuti Waktu Indonesia)
+const dateObj = new Date();
+const TODAY = dateObj.toLocaleDateString('en-CA', { timeZone: 'Asia/Jakarta' }); // Format: YYYY-MM-DD
+document.getElementById('header-date').textContent = dateObj.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Jakarta' });
+
+// 5. STATE DATA (Dikosongkan karena akan diisi oleh Firestore)
+let transactions = [];
+let tasks = [];
+let events = [];
+let saved = 0;
+
+let page = 'overview', taskFilter = 'Semua', ownerFilter = 'Semua', financeType = 'all', financeSearch = '', selectedDay = '', activeModal = '', triggerElement;
+
+// 6. FUNGSI SINKRONISASI REAL-TIME (onSnapshot)
+onSnapshot(collection(db, "transactions"), (snapshot) => {
+    transactions = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    render();
+});
+onSnapshot(collection(db, "tasks"), (snapshot) => {
+    tasks = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    render();
+});
+onSnapshot(collection(db, "events"), (snapshot) => {
+    events = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    render();
+});
+onSnapshot(doc(db, "settings", "savings"), (docSnapshot) => {
+    saved = docSnapshot.exists() ? (docSnapshot.data().amount || 0) : 0;
+    render();
+});
+
+// 7. FUNGSI UTILITAS & KOMPONEN UI
+const money=n=>'Rp '+new Intl.NumberFormat('id-ID').format(n);
+const escapeHTML=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon=n=>`<i class="ph ph-${n}" aria-hidden="true"></i>`;
+const dateLabel=d=>new Date(d+'T12:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short'});
+const avatar=o=>o==='Bersama'?`<span class="avatar-stack" aria-label="Dion dan Pasangan"><span class="avatar">D</span><span class="avatar pink">P</span></span>`:`<span class="avatar ${o==='Pasangan'?'pink':''}" aria-label="${o}">${o==='Pasangan'?'P':'D'}</span>`;
+const tag=o=>`<span class="tag ${o==='Bersama'?'rose':o==='Pasangan'?'cyan':''}">${o==='Dion'?'Pribadi':o==='Bersama'?'Berdua':'Pasangan'}</span>`;
+const totals=()=>{const income=transactions.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);const expense=transactions.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);return{income,expense,balance:income-expense}};
+const footer=()=>`<footer class="footer"><span>${icon('intersect')} SyncSpace · Ruang kecil, rencana besar.</span><span><b class="status-dot"></b> Terhubung ke Firebase Cloud · Real-time Sync</span></footer>`;
+const monthBadge=()=>`<span class="btn" style="cursor:default">${icon('calendar-blank')} ${dateObj.toLocaleDateString('id-ID',{month:'long',year:'numeric', timeZone: 'Asia/Jakarta'})}</span>`;
+
+function header(eyebrow,title,subtitle,action,label){return `<div class="page-head"><div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p class="subtitle">${subtitle}</p></div><div class="head-actions">${monthBadge()}<button class="btn btn-primary hover:-translate-y-0.5" data-modal="${action}">${icon('plus')}${label}</button></div></div>`}
+function statCards(finance=false){const t=totals();const remaining=tasks.filter(t=>t.date===TODAY&&t.status!=='done').length;return `<section class="stats" aria-label="Ringkasan bulan ini"><article class="stat"><div class="stat-label">${icon('wallet')} Total saldo bersama</div><div class="amount">${money(t.balance)}</div><div class="stat-foot"><span class="chip">${icon('check')} Positif</span><span>Pemasukan dikurangi pengeluaran</span></div></article><article class="stat"><div class="stat-label">${icon(finance?'arrow-down-left':'arrow-up-right')} ${finance?'Pemasukan':'Pengeluaran'}</div><div class="amount">${money(finance?t.income:t.expense)}</div><div class="stat-foot"><span class="chip ${finance?'':'pink'}">${finance?transactions.filter(t=>t.type==='income').length+' pemasukan':(t.income===0?0:Math.round(t.expense/t.income*100))+'% pemasukan'}</span><span>${finance?'Semua sumber pendapatan':'Tetap dalam kendali'}</span></div></article><article class="stat"><div class="stat-label">${icon(finance?'arrow-up-right':'check-square')} ${finance?'Pengeluaran':'Task hari ini'}</div><div class="amount">${finance?money(t.expense):remaining+' <span class="suffix">task tersisa</span>'}</div><div class="stat-foot"><span class="chip purple">${icon(finance?'receipt':'check')}${finance?transactions.filter(t=>t.type==='expense').length+' transaksi':tasks.filter(t=>t.date===TODAY&&t.status==='done').length+' selesai'}</span><span>${finance?'Seluruh kategori pengeluaran':'One step at a time.'}</span></div></article></section>`}
+
+function recentTransactions(){
+    if(!transactions.length) return '<p class="empty" style="padding:15px">Belum ada transaksi.</p>';
+    return [...transactions].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map(t=>`<div class="transaction"><div class="tx-icon">${icon(t.icon)}</div><div><p class="tx-name">${escapeHTML(t.name)}</p><p class="tx-detail">${escapeHTML(t.category)} <span style="padding:0 4px">·</span> ${t.owner}</p></div><div class="tx-amount ${t.type==='income'?'positive':'negative'}">${t.type==='income'?'+':'−'} ${money(t.amount)}<div class="tx-detail">${dateLabel(t.date)}</div></div></div>`).join('');
+}
+
+function agendaRows(list){
+    if(!list.length)return '<p class="empty">Belum ada agenda. Waktunya punya ruang untuk diri sendiri.</p>';
+    return [...list].sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>{const d=new Date(e.date+'T12:00:00');return `<article class="agenda-row"><div class="agenda-date"><span class="day">${d.toLocaleDateString('id-ID',{weekday:'short'})}</span><strong>${d.getDate()}</strong></div><div class="agenda-event ${e.owner==='Bersama'?'rose':e.owner==='Pasangan'?'cyan':''}"><h3>${escapeHTML(e.name)}</h3><div class="spread"><span class="event-time">${icon('clock')} ${e.time} WIB ${page==='planning'?' · '+escapeHTML(e.detail):''}</span>${tag(e.owner)}</div></div></article>`}).join('')
+}
+
+function todayTasks(){
+    const list=tasks.filter(t=>t.date===TODAY&&(taskFilter==='Semua'||t.owner===taskFilter));
+    return list.length?list.map(t=>`<div class="task-row ${t.status==='done'?'done':''}"><input type="checkbox" id="task-${t.id}" data-check="${t.id}" ${t.status==='done'?'checked':''}><label for="task-${t.id}">${escapeHTML(t.name)}<span class="task-meta">${t.status==='progress'?'<b class="priority"></b>Sedang dikerjakan':t.status==='done'?'Selesai':t.priority}</span></label>${avatar(t.owner)}</div>`).join(''):'<p class="empty">Tidak ada task untuk hari ini.</p>'
+}
+
+function overview(){
+    const t=totals();
+    const progress=Math.min(100,Math.round(saved/10000000*100));
+    return header('YOUR SHARED SPACE','Halo, Dion & Pasangan <i class="ph ph-sparkle" style="color:#b6a0ee;font-size:24px" aria-hidden="true"></i>','Semua rencana kita, dalam satu tempat. Let’s make today count.','transaction','Catat transaksi')+statCards()+`<div class="dashboard-grid"><section class="panel"><div class="panel-header spread"><div><h2>Arus keuangan</h2><p class="panel-subtitle">A little overview of our money.</p></div><button class="btn btn-ghost" data-page="finance">Lihat semua ${icon('arrow-up-right')}</button></div><div class="panel-body"><div class="cash-summary"><div class="cash-item"><span class="flow-icon">${icon('arrow-down-left')}</span><div><p>Pemasukan</p><strong>${money(t.income)}</strong></div></div><div class="cash-item"><span class="flow-icon out">${icon('arrow-up-right')}</span><div><p>Pengeluaran</p><strong>${money(t.expense)}</strong></div></div></div><p class="mini-label">TRANSAKSI TERBARU</p>${recentTransactions()}</div></section><section class="panel savings"><div class="panel-header spread"><h2>Target tabungan bersama</h2>${icon('sparkle')}</div><div class="panel-body"><div class="savings-hero"><span class="goal-icon">${icon('airplane-tilt')}</span><div><h3>Our next escape</h3><p class="panel-subtitle">Liburan ke Bali · Desember 2026</p></div></div><p class="goal-money">${money(saved)} <span>/ ${money(10000000)}</span></p><div class="progress-track" role="progressbar" aria-label="Tabungan liburan" aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:${progress}%"></div></div><div class="savings-meta"><span>${saved>=10000000?'Target tercapai!':money(10000000-saved)+' lagi menuju Bali'}</span><strong>${progress}%</strong></div><div class="saving-footer"><div class="flex-row" style="gap:0">${avatar('Bersama')}<p>Growing together</p></div><button class="btn save-btn" data-modal="saving">${icon('plus')} Tambah tabungan</button></div><p class="encouragement">${icon('sparkle')} ${progress>=100?'Bali, here we come. Kalian berhasil!':'Sedikit demi sedikit, makin dekat ke mimpi kita.'}</p></div></section><section class="panel"><div class="panel-header spread"><div><h2>Agenda terdekat</h2><p class="panel-subtitle">Jadwal yang akan datang</p></div><button class="btn btn-ghost" data-page="planning">Lihat planning ${icon('arrow-up-right')}</button></div><div class="panel-body">${agendaRows(events.filter(e=>e.date>=TODAY).slice(0,3))}</div></section><section class="panel"><div class="panel-header spread"><div><h2>Let’s get things done</h2><p class="panel-subtitle">Fokus kecil untuk hari ini.</p></div><button class="btn btn-ghost" data-page="work" aria-label="Lihat semua pekerjaan">${icon('arrow-up-right')}</button></div><div class="panel-body"><div class="tasks-toolbar" aria-label="Filter pemilik tugas">${['Semua','Dion','Pasangan','Bersama'].map(f=>`<button class="filter-tab ${taskFilter===f?'active':''}" data-taskfilter="${f}" aria-pressed="${taskFilter===f}">${f==='Dion'?'Saya':f}</button>`).join('')}</div><div id="today-tasks">${todayTasks()}</div></div></section></div>`+footer()}
+
+function financeRows(){
+    const list=[...transactions].sort((a,b)=>b.date.localeCompare(a.date)).filter(t=>(financeType==='all'||t.type===financeType)&&(t.name+' '+t.category+' '+t.owner).toLowerCase().includes(financeSearch.toLowerCase()));
+    return list.length?list.map(t=>`<tr><td><div class="flex-row">${icon(t.icon)} ${escapeHTML(t.name)}</div></td><td><span class="tag">${escapeHTML(t.category)}</span></td><td>${t.owner}</td><td class="muted">${dateLabel(t.date)}</td><td class="${t.type==='income'?'positive':'negative'}">${t.type==='income'?'+':'−'} ${money(t.amount)}</td></tr>`).join(''):'<tr><td colspan="5" class="empty">Tidak ada transaksi yang cocok.</td></tr>'}
+
+function finance(){return header('MONEY, IN SYNC','Keuangan bersama','Lebih transparan, lebih tenang. Setiap rupiah punya cerita.','transaction','Catat transaksi')+statCards(true)+`<section class="panel"><div class="panel-header"><h2>Riwayat transaksi</h2><p class="panel-subtitle">Pemasukan dan pengeluaran keseluruhan.</p></div><div class="panel-body" style="padding-bottom:0"><div class="toolbar"><label class="search">${icon('magnifying-glass')}<span class="sr-only">Cari transaksi</span><input class="field" id="finance-search" placeholder="Cari transaksi atau kategori…" value="${escapeHTML(financeSearch)}"></label><label><span class="sr-only">Jenis transaksi</span><select class="field" id="finance-type"><option value="all">Semua transaksi</option><option value="income" ${financeType==='income'?'selected':''}>Pemasukan</option><option value="expense" ${financeType==='expense'?'selected':''}>Pengeluaran</option></select></label></div></div><div class="table-wrap"><table><thead><tr><th>Transaksi</th><th>Kategori</th><th>Oleh</th><th>Tanggal</th><th>Nominal</th></tr></thead><tbody id="finance-rows">${financeRows()}</tbody></table></div><div class="table-footer">${transactions.length} transaksi tercatat · Mata uang IDR</div></section>`+footer()}
+
+function planning(){
+    const days=['Sen','Sel','Rab','Kam','Jum','Sab','Min'];
+    // Membuat daftar 7 hari kalender berjalan mulai dari hari ini
+    const weekDates = Array.from({length: 7}, (_, i) => {
+        const d = new Date();
+        d.setDate(d.getDate() + i);
+        return { label: days[d.getDay() === 0 ? 6 : d.getDay() - 1], full: d.toLocaleDateString('en-CA',{timeZone:'Asia/Jakarta'}), num: d.getDate() };
+    });
+
+    return header('MAKE TIME FOR US','Agenda & Planning','Antara kesibukan dan quality time, ada ruang untuk keduanya.','event','Tambah agenda')+`<div class="spread" style="margin-bottom:20px"><h2 style="font-size:15px">7 Hari Kedepan</h2><button class="btn btn-ghost" data-day="">Semua agenda ${icon('calendar-blank')}</button></div><div class="week-grid" aria-label="Pilih hari">${weekDates.map(d=>{return `<button class="day-cell ${selectedDay===d.full||(!selectedDay&&d.full===TODAY)?'selected':''}" data-day="${d.full}" aria-pressed="${selectedDay===d.full}"><span>${d.label}${d.full===TODAY?' · ini':''}</span><strong>${d.num}</strong>${events.some(e=>e.date===d.full)?'<b class="day-dot"></b>':'<b class="day-dot" style="opacity:0"></b>'}</button>`}).join('')}</div><div class="legend"><span><b></b> Jadwal pribadi</span><span><b class="cyan"></b> Jadwal pasangan</span><span><b class="rose"></b> Jadwal berdua</span></div><section class="panel"><div class="panel-header spread"><h2>${selectedDay?'Agenda '+dateLabel(selectedDay):'Seluruh Agenda'}</h2><span class="muted small">${events.filter(e=>!selectedDay||e.date===selectedDay).length} agenda</span></div><div class="panel-body planning-list">${agendaRows(events.filter(e=>!selectedDay||e.date===selectedDay))}</div></section>`+footer()}
+
+function work(){return header('SMALL STEPS, BIG WINS','Kerja, lebih terarah','Bagi tugas, atur fokus, dan rayakan setiap progres kecil.','task','Tambah task')+`<div class="toolbar"><div class="flex-row"><span class="muted small">Ditugaskan ke</span><select class="field" id="owner-filter" aria-label="Filter penanggung jawab">${['Semua','Dion','Pasangan','Bersama'].map(o=>`<option value="${o}" ${ownerFilter===o?'selected':''}>${o==='Dion'?'Tugas saya':o==='Semua'?'Semua tugas':'Tugas '+o.toLowerCase()}</option>`).join('')}</select></div><p class="overview-mini-note">Pindahkan status lewat menu di setiap kartu.<br>Task hari ini juga muncul di Overview.</p></div><div class="kanban">${[['todo','To-do'],['progress','In progress'],['done','Done']].map(([status,label])=>{const list=tasks.filter(t=>t.status===status&&(ownerFilter==='Semua'||t.owner===ownerFilter));return `<section class="kanban-col"><h2 class="column-title"><span class="column-dot ${status}"></span>${label}<span class="count">${list.length}</span></h2>${list.length?list.map(t=>`<article class="task-card hover:border-violet-400/40"><div class="spread"><span class="tag ${t.priority==='Prioritas tinggi'?'rose':''}">${escapeHTML(t.priority)}</span>${icon(status==='done'?'check-circle':'dots-three')}</div><h3>${escapeHTML(t.name)}</h3><div class="spread"><span class="event-time">${icon('calendar-blank')} ${t.date===TODAY?'Hari ini':dateLabel(t.date)}</span>${avatar(t.owner)}</div><label><span class="sr-only">Status ${escapeHTML(t.name)}</span><select class="field" data-status="${t.id}"><option value="todo" ${status==='todo'?'selected':''}>To-do</option><option value="progress" ${status==='progress'?'selected':''}>In progress</option><option value="done" ${status==='done'?'selected':''}>Done</option></select></label></article>`).join(''):'<p class="empty" style="padding:25px 5px">Belum ada task.</p>'}</section>`}).join('')}</div>`+footer()}
+
+function render(){
+    document.getElementById('content').innerHTML=({overview,finance,planning,work})[page]();
+    document.getElementById('breadcrumb').textContent=({overview:'Overview',finance:'Keuangan',planning:'Planning',work:'Kerja'})[page];
+    document.querySelectorAll('.nav-item').forEach(b=>{
+        const active=b.dataset.page===page;
+        b.classList.toggle('active',active);
+        if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')
+    });
+    document.getElementById('task-count').textContent=tasks.filter(t=>t.status!=='done').length;
+    document.getElementById('content').classList.remove('page');
+    void document.getElementById('content').offsetWidth;
+    document.getElementById('content').classList.add('page');
+}
+
+function navigate(p){
+    if(!['overview','finance','planning','work'].includes(p))return;
+    page=p;
+    render();
+    if(location.hash!=='#'+p)history.replaceState(null,'','#'+p);
+    window.scrollTo({top:0,behavior:'instant'})
+}
+
+function toast(text){
+    const el=document.getElementById('toast');
+    el.textContent=text;
+    el.hidden=false;
+    clearTimeout(window.toastTimer);
+    window.toastTimer=setTimeout(()=>el.hidden=true,3200)
+}
+
+const inputField=(label,name,type,extra='')=>`<label class="form-field">${label}<input class="field" name="${name}" type="${type}" required ${extra}></label>`;
+const ownerSelect=()=>`<label class="form-field">Penanggung jawab<select class="field" name="owner"><option>Dion</option><option>Pasangan</option><option>Bersama</option></select></label>`;
+
+function openModal(type){
+    activeModal=type;
+    triggerElement=document.activeElement;
+    const details={
+        transaction:['Catat transaksi','Biar keuangan kita tetap jelas dan teratur.'],
+        event:['Tambah agenda','Luangkan waktu untuk hal yang penting.'],
+        task:['Tambah task','Satu langkah kecil menuju hari yang produktif.'],
+        saving:['Tambah tabungan','Catatan progres target terpisah dari saldo transaksi.']
+    };
+    document.getElementById('modal-title').textContent=details[type][0];
+    document.getElementById('modal-description').textContent=details[type][1];
+    let fields='';
+    if(type==='transaction')fields=`<label class="form-field">Jenis transaksi<select name="type" class="field"><option value="expense">Pengeluaran</option><option value="income">Pemasukan</option></select></label>${inputField('Nama transaksi','name','text','maxlength="80" placeholder="Contoh: Belanja bulanan"')}${inputField('Nominal (Rp)','amount','number','min="1" max="1000000000" step="1" placeholder="150000"')}<div class="form-columns"><label class="form-field">Kategori<select class="field" name="category">${['Kebutuhan','Gaji','Freelance','Konten','Tagihan','Tempat tinggal','Hiburan','Lainnya'].map(c=>'<option>'+c+'</option>').join('')}</select></label>${ownerSelect()}</div>${inputField('Tanggal transaksi','date','date','value="'+TODAY+'"')}`;
+    if(type==='event')fields=inputField('Nama agenda','name','text','maxlength="80" placeholder="Contoh: Date night"')+`<div class="form-columns">${inputField('Tanggal','date','date','value="'+TODAY+'"')}${inputField('Waktu (WIB)','time','time','value="19:00"')}</div>`+ownerSelect()+inputField('Lokasi / catatan','detail','text','maxlength="100" placeholder="Contoh: Di rumah"');
+    if(type==='task')fields=inputField('Nama task','name','text','maxlength="100" placeholder="Apa yang ingin diselesaikan?"')+ownerSelect()+`<div class="form-columns"><label class="form-field">Label<select class="field" name="priority"><option>Personal</option><option>Prioritas tinggi</option><option>Konten</option><option>Rumah</option><option>Keuangan</option></select></label>${inputField('Tenggat','date','date','value="'+TODAY+'"')}</div>`;
+    if(type==='saving')fields=`<div style="margin-bottom:20px"><p class="muted small">Tabungan saat ini</p><p class="goal-money" style="margin-top:8px">${money(saved)}</p></div>`+inputField('Jumlah yang ditambahkan (Rp)','amount','number','min="1" max="1000000000" step="1" placeholder="500000"')+`<p class="muted small">Ini memperbarui target tabungan, bukan mengurangi saldo bersama.</p>`;
+    
+    document.getElementById('entry-form').innerHTML=fields+`<div class="form-actions"><button type="button" class="btn" data-close>Batal</button><button type="submit" class="btn btn-primary">${icon('check')} Simpan ${type==='transaction'?'transaksi':type==='event'?'agenda':type==='task'?'task':'tabungan'}</button></div>`;
+    document.getElementById('modal').showModal();
+}
+
+function closeModal(){document.getElementById('modal').close()}
+document.getElementById('close-modal').addEventListener('click',closeModal);
+document.getElementById('modal').addEventListener('close',()=>{if(triggerElement&&triggerElement.isConnected)triggerElement.focus()});
+
+// 8. EVENT LISTENER UNTUK KLIK DAN PERUBAHAN UI (Menyimpan ke Firebase)
+document.addEventListener('click',e=>{
+    const nav=e.target.closest('[data-page]'); if(nav)navigate(nav.dataset.page);
+    const modal=e.target.closest('[data-modal]'); if(modal)openModal(modal.dataset.modal);
+    if(e.target.closest('[data-close]'))closeModal();
+    const filter=e.target.closest('[data-taskfilter]'); if(filter){taskFilter=filter.dataset.taskfilter;render()}
+    const day=e.target.closest('[data-day]'); if(day){selectedDay=day.dataset.day;render()}
+});
+
+document.addEventListener('change', async e=>{
+    // Centang Task (Checkbox di Overview)
+    if(e.target.matches('[data-check]')){
+        const taskId = e.target.dataset.check;
+        const newStatus = e.target.checked ? 'done' : 'todo';
+        await updateDoc(doc(db, "tasks", taskId), { status: newStatus });
+        toast(newStatus==='done'?'Nice! Satu task berhasil diselesaikan.':'Task kembali ke To-do.');
+    }
+    // Ubah Status Task (Dropdown di Kerja)
+    if(e.target.matches('[data-status]')){
+        const taskId = e.target.dataset.status;
+        await updateDoc(doc(db, "tasks", taskId), { status: e.target.value });
+        toast('Status task diperbarui.');
+    }
+    if(e.target.id==='owner-filter'){ownerFilter=e.target.value;render()}
+    if(e.target.id==='finance-type'){financeType=e.target.value;document.getElementById('finance-rows').innerHTML=financeRows()}
+});
+
+document.addEventListener('input',e=>{
+    if(e.target.id==='finance-search'){financeSearch=e.target.value;document.getElementById('finance-rows').innerHTML=financeRows()}
+});
+
+// 9. FORM SUBMIT (Menambah data baru ke Firebase)
+document.getElementById('entry-form').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const form=e.target;
+    const data=Object.fromEntries(new FormData(form));
+    
+    if(data.name&&!data.name.trim()){
+        form.elements.name.setCustomValidity('Nama tidak boleh kosong.');
+        form.elements.name.reportValidity();
+        form.elements.name.addEventListener('input',()=>form.elements.name.setCustomValidity(''),{once:true});
+        return;
+    }
+    const amount=Number(data.amount);
+    
+    // Tampilkan status loading ringan pada tombol (opsional)
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Menyimpan...';
+    submitBtn.disabled = true;
+
+    try {
+        if(activeModal==='transaction'){
+            await addDoc(collection(db, "transactions"), {
+                name: data.name.trim(),
+                amount: amount,
+                type: data.type,
+                category: data.category,
+                date: data.date,
+                owner: data.owner,
+                icon: data.type==='income'?'arrow-down-left':'receipt'
+            });
+        }
+        if(activeModal==='event'){
+            await addDoc(collection(db, "events"), {
+                name: data.name.trim(),
+                date: data.date,
+                time: data.time,
+                owner: data.owner,
+                detail: data.detail.trim()
+            });
+            selectedDay='';
+        }
+        if(activeModal==='task'){
+            await addDoc(collection(db, "tasks"), {
+                name: data.name.trim(),
+                owner: data.owner,
+                priority: data.priority,
+                date: data.date,
+                status: 'todo'
+            });
+        }
+        if(activeModal==='saving'){
+            await setDoc(doc(db, "settings", "savings"), {
+                amount: saved + amount
+            });
+        }
+        
+        closeModal();
+        toast(activeModal==='saving'?'Tabungan bertambah. Mimpi kita makin dekat!':'Berhasil disinkronisasi ke ruang kita.');
+        
+    } catch (error) {
+        console.error("Error adding document: ", error);
+        toast('Gagal menyimpan. Pastikan internet lancar dan aturan Firebase sudah Test Mode.');
+    } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+// Routing
+window.addEventListener('hashchange',()=>navigate(location.hash.slice(1)));
+navigate(['overview','finance','planning','work'].includes(location.hash.slice(1))?location.hash.slice(1):'overview');
+</script>
+</body>
+</html>
